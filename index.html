@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laudza Kusuma — Independent Researcher</title>
+<meta name="description" content="Independent researcher: post-quantum cryptography, consensus systems and quantum communications.">
+<style>
+:root{--fg:#1a1a1a;--muted:#555;--line:#ddd;--accent:#1a4f8b;--bg:#fff;--soft:#f6f6f6}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:600;line-height:1.3}
+.mono,code,pre{font-family:Consolas,"SFMono-Regular",Menlo,monospace}
+a{color:var(--accent)}
+header{padding:56px 0 24px;border-bottom:1px solid var(--line)}
+h1{font-size:2.2rem;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 18px}
+.links{display:flex;flex-wrap:wrap;gap:8px 18px;padding:0;margin:0;list-style:none;font-size:.95rem}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+.metric{padding:20px 12px;border-right:1px solid var(--line)}
+.metric:last-child{border-right:0}
+.metric:first-child{padding-left:0}
+.metric b{display:block;font:600 1.4rem Consolas,Menlo,monospace}
+.metric span{font-size:.85rem;color:var(--muted)}
+section{padding:36px 0 8px}
+h2{font-size:1.5rem;margin:0 0 18px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.paper{margin-bottom:32px}
+.paper h3{font-size:1.15rem;margin:0 0 6px}
+.paper .tag{font:.8rem Consolas,Menlo,monospace;color:var(--muted)}
+.paper p{margin:8px 0 12px}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.btn{font:.85rem Consolas,Menlo,monospace;padding:4px 10px;border:1px solid var(--fg);background:#fff;color:var(--fg);text-decoration:none;cursor:pointer;border-radius:2px}
+.btn:hover{background:var(--fg);color:#fff}
+pre.bib{display:none;margin:12px 0 0;padding:12px;background:var(--soft);border:1px solid var(--line);overflow-x:auto;font-size:.8rem;white-space:pre-wrap}
+pre.bib.open{display:block}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+figure{margin:0}
+figure img{width:100%;height:auto;border:1px solid var(--line);display:block}
+figcaption{font-size:.85rem;color:var(--muted);margin-top:6px}
+footer{margin-top:48px;padding:20px 0 40px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+@media(max-width:700px){.metrics{grid-template-columns:repeat(2,1fr)}.metric:nth-child(2){border-right:0}.metric:nth-child(-n+2){border-bottom:1px solid var(--line)}.metric:nth-child(3){padding-left:0}.gallery{grid-template-columns:1fr}h1{font-size:1.8rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>Laudza Kusuma</h1>
+<p class="sub">Independent Researcher | Post-Quantum Cryptography, Consensus Systems &amp; Quantum Communications</p>
+<ul class="links">
+<li><a href="https://github.com/laudzakusuma/aqmp-protocol">GitHub: aqmp-protocol</a></li>
+<li><a href="https://github.com/laudzakusuma/pqc_demo">GitHub: pqc_demo</a></li>
+<li><a class="mono" href="https://doi.org/10.5281/zenodo.18993494">Zenodo Concept DOI</a></li>
+<li><a class="mono" href="mailto:laudzaxie@gmail.com">laudzaxie@gmail.com</a></li>
+</ul>
+</header>
+
+<div class="metrics">
+<div class="metric"><b>3 DOIs</b><span>Published Zenodo Research Trilogy</span></div>
+<div class="metric"><b>187.00 bits</b><span>EasyCrypt QROM Security, q = 2^64</span></div>
+<div class="metric"><b>676 Bytes</b><span>Frozen UTXO Rescue, -80.23% vs Lifeboat</span></div>
+<div class="metric"><b>62 / 62</b><span>Passing Reproducible Pytest Suite</span></div>
+</div>
+
+<section>
+<h2>Publications</h2>
+
+<article class="paper">
+<span class="tag">Paper #1</span>
+<h3>Adaptive Quantum Migration Protocol (AQMP v2.0): Break-Even Lattice Aggregation, 300-Byte Plonky3 Recursion, and QROM-Verified Temporal Decoupling</h3>
+<p>N*<sub>EL</sub> = 81, N*<sub>CL</sub> = 111. Plonky3 BabyBear 300 B + 4-byte KeyRegistry = 11.30 KB at N = 250, outperforming ECDSA at N = 6. Security verified in EasyCrypt under the Zhandry QROM.</p>
+<div class="btns">
+<a class="btn" href="https://doi.org/10.5281/zenodo.24303569">DOI</a>
+<a class="btn" href="https://github.com/laudzakusuma/aqmp-protocol">GitHub</a>
+<button class="btn" data-bib="bib1" aria-expanded="false">BibTeX</button>
+</div>
+<pre class="bib" id="bib1">@misc{kusuma2026aqmp,
+  author    = {Kusuma, Laudza},
+  title     = {Adaptive Quantum Migration Protocol (AQMP v2.0): Break-Even Lattice Aggregation, 300-Byte Plonky3 Recursion, and QROM-Verified Temporal Decoupling},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.24303569},
+  url       = {https://doi.org/10.5281/zenodo.24303569}
+}</pre>
+</article>
+
+<article class="paper">
+<span class="tag">Paper #2</span>
+<h3>Stateless Post-Quantum Threshold Signatures and Knowledge-Asymmetry Frozen UTXO Rescue for Blockchain Custody and Legacy Supply Migration</h3>
+<p>Stateless PQ-MPC over F<sub>q</sub><sup>64</sup>, q = 8,380,417. Verification takes 3.90-4.68 ms. Knowledge-Asymmetry UTXO Rescue uses unhardened BIP-32 parent chain codes and requires 676 B.</p>
+<div class="btns">
+<a class="btn" href="https://doi.org/10.5281/zenodo.24341314">DOI</a>
+<a class="btn" href="https://github.com/laudzakusuma/aqmp-protocol">GitHub</a>
+<button class="btn" data-bib="bib2" aria-expanded="false">BibTeX</button>
+</div>
+<pre class="bib" id="bib2">@misc{kusuma2026stateless,
+  author    = {Kusuma, Laudza},
+  title     = {Stateless Post-Quantum Threshold Signatures and Knowledge-Asymmetry Frozen UTXO Rescue for Blockchain Custody and Legacy Supply Migration},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.24341314},
+  url       = {https://doi.org/10.5281/zenodo.24341314}
+}</pre>
+</article>
+
+<article class="paper">
+<span class="tag">Paper #3</span>
+<h3>Decoherence-Resilient Classical Authentication for Device-Independent Quantum Key Distribution and Memory-Assisted Quantum Repeaters via QROM-Verified Dual-Commit Sponges</h3>
+<p>384-bit Wide-Sponge Dual-Commit XOR, 144 B cycle, 13.40 us verification. At L = 200 km, M = 8 hops, with a 9.59 ms coherence boundary and CHSH S = 2.669, the scheme yields 16,484 bps versus 0 bps for ML-DSA-65 and SPHINCS+-128f.</p>
+<div class="btns">
+<a class="btn" href="https://doi.org/10.5281/zenodo.24343601">DOI</a>
+<a class="btn" href="https://github.com/laudzakusuma/aqmp-protocol">GitHub</a>
+<button class="btn" data-bib="bib3" aria-expanded="false">BibTeX</button>
+</div>
+<pre class="bib" id="bib3">@misc{kusuma2026diqkd,
+  author    = {Kusuma, Laudza},
+  title     = {Decoherence-Resilient Classical Authentication for Device-Independent Quantum Key Distribution and Memory-Assisted Quantum Repeaters via QROM-Verified Dual-Commit Sponges},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.24343601},
+  url       = {https://doi.org/10.5281/zenodo.24343601}
+}</pre>
+</article>
+</section>
+
+<section>
+<h2>Empirical Figures (300 DPI)</h2>
+<div class="gallery">
+<figure><img src="assets/fig1_breakeven_curve.png" alt="Break-even curve" loading="lazy"><figcaption><b>Fig. 1.</b> Break-even curve of lattice signature aggregation versus ECDSA; N*<sub>EL</sub> = 81, N*<sub>CL</sub> = 111. Plonky3 recursion outperforms ECDSA at N = 6.</figcaption></figure>
+<figure><img src="assets/fig4_stateless_mpc_scaling.png" alt="Stateless MPC scaling" loading="lazy"><figcaption><b>Fig. 4.</b> Scaling of stateless PQ-MPC threshold signing over F<sub>q</sub><sup>64</sup>, q = 8,380,417; verification 3.90-4.68 ms.</figcaption></figure>
+<figure><img src="assets/fig5_utxo_rescue_comparison.png" alt="UTXO rescue comparison" loading="lazy"><figcaption><b>Fig. 5.</b> Frozen UTXO rescue size: 676 B Knowledge-Asymmetry rescue, -80.23% versus Lifeboat.</figcaption></figure>
+<figure><img src="assets/fig6_diqkd_keyrate_vs_distance.png" alt="DIQKD key rate versus distance" loading="lazy"><figcaption><b>Fig. 6.</b> DIQKD secret key rate versus distance with Dual-Commit Sponge authentication (L = 200 km, M = 8 hops, CHSH S = 2.669; 16,484 bps).</figcaption></figure>
+</div>
+</section>
+
+<footer>Laudza Kusuma (Independent Researcher) | CC BY 4.0 / MIT</footer>
+</div>
+<script>
+document.querySelectorAll('[data-bib]').forEach(function(b){
+  b.addEventListener('click',function(){
+    var p=document.getElementById(b.dataset.bib);
+    var o=p.classList.toggle('open');
+    b.setAttribute('aria-expanded',o);
+  });
+});
+</script>
+</body>
+</html>
