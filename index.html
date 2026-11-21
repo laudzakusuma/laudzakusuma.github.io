@@ -5,53 +5,107 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Laudza Kusuma — Independent Researcher</title>
 <meta name="description" content="Independent researcher: post-quantum cryptography, consensus systems and quantum communications.">
+<script>
+(function(){var t=localStorage.getItem('theme');if(!t){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
 <style>
-:root{--fg:#1a1a1a;--muted:#555;--line:#ddd;--accent:#1a4f8b;--bg:#fff;--soft:#f6f6f6}
+:root{--bg:#fff;--surface:#f7f7f8;--fg:#18181b;--muted:#5f6368;--line:#e4e4e7;--accent:#1a4f8b;--hover:#c5c5cc;--nav:rgba(255,255,255,.8)}
+[data-theme=dark]{--bg:#0f1115;--surface:#171a21;--fg:#e8e8ea;--muted:#9aa0a8;--line:#272b34;--accent:#7db0ee;--hover:#454b58;--nav:rgba(15,17,21,.8)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
-.wrap{max-width:900px;margin:0 auto;padding:0 20px}
-h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:600;line-height:1.3}
-.mono,code,pre{font-family:Consolas,"SFMono-Regular",Menlo,monospace}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.7 Inter,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;transition:background .2s,color .2s}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Newsreader,Georgia,"Times New Roman",serif;font-weight:600;line-height:1.3}
+.mono,code,pre{font-family:"JetBrains Mono",Consolas,Menlo,monospace}
 a{color:var(--accent)}
-header{padding:56px 0 24px;border-bottom:1px solid var(--line)}
-h1{font-size:2.2rem;margin:0 0 6px}
-.sub{color:var(--muted);margin:0 0 18px}
-.links{display:flex;flex-wrap:wrap;gap:8px 18px;padding:0;margin:0;list-style:none;font-size:.95rem}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
-.metric{padding:20px 12px;border-right:1px solid var(--line)}
-.metric:last-child{border-right:0}
-.metric:first-child{padding-left:0}
-.metric b{display:block;font:600 1.4rem Consolas,Menlo,monospace}
-.metric span{font-size:.85rem;color:var(--muted)}
-section{padding:36px 0 8px}
-h2{font-size:1.5rem;margin:0 0 18px;border-bottom:1px solid var(--line);padding-bottom:6px}
-.paper{margin-bottom:32px}
-.paper h3{font-size:1.15rem;margin:0 0 6px}
-.paper .tag{font:.8rem Consolas,Menlo,monospace;color:var(--muted)}
-.paper p{margin:8px 0 12px}
-.btns{display:flex;flex-wrap:wrap;gap:8px}
-.btn{font:.85rem Consolas,Menlo,monospace;padding:4px 10px;border:1px solid var(--fg);background:#fff;color:var(--fg);text-decoration:none;cursor:pointer;border-radius:2px}
-.btn:hover{background:var(--fg);color:#fff}
-pre.bib{display:none;margin:12px 0 0;padding:12px;background:var(--soft);border:1px solid var(--line);overflow-x:auto;font-size:.8rem;white-space:pre-wrap}
-pre.bib.open{display:block}
-.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-figure{margin:0}
-figure img{width:100%;height:auto;border:1px solid var(--line);display:block}
-figcaption{font-size:.85rem;color:var(--muted);margin-top:6px}
-footer{margin-top:48px;padding:20px 0 40px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
-@media(max-width:700px){.metrics{grid-template-columns:repeat(2,1fr)}.metric:nth-child(2){border-right:0}.metric:nth-child(-n+2){border-bottom:1px solid var(--line)}.metric:nth-child(3){padding-left:0}.gallery{grid-template-columns:1fr}h1{font-size:1.8rem}}
+nav{position:sticky;top:0;z-index:50;background:var(--nav);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;height:52px}
+.brand{font:600 1.1rem Newsreader,Georgia,serif;color:var(--fg);text-decoration:none;margin-right:auto}
+nav a.nl{font-size:.88rem;color:var(--muted);text-decoration:none;transition:color .15s}
+nav a.nl:hover{color:var(--fg)}
+#theme{width:34px;height:34px;border:1px solid var(--line);background:transparent;color:var(--fg);border-radius:6px;cursor:pointer;display:grid;place-items:center;transition:border-color .15s}
+#theme:hover{border-color:var(--hover)}
+#theme svg{width:17px;height:17px}
+.i-sun{display:none}[data-theme=dark] .i-sun{display:block}[data-theme=dark] .i-moon{display:none}
+header{padding:56px 0 28px}
+h1{font-size:2.6rem;margin:0 0 6px;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 22px;max-width:640px}
+.pills{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0;list-style:none}
+.pills a{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--fg);text-decoration:none;font-size:.88rem;transition:border-color .15s,transform .15s}
+.pills a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.pills svg{width:16px;height:16px;flex:none}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:8px}
+.metric{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 16px}
+.metric b{display:block;font:600 1.5rem/1.2 "JetBrains Mono",Consolas,monospace;letter-spacing:-.02em;margin-bottom:6px}
+.metric span{font-size:.82rem;color:var(--muted);line-height:1.4;display:block}
+section{padding:44px 0 4px}
+h2{font-size:1.65rem;margin:0 0 20px}
+.paper{border:1px solid var(--line);border-radius:10px;padding:24px;margin-bottom:20px;transition:border-color .2s}
+.paper:hover{border-color:var(--hover)}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px}
+.tag{font:500 .8rem "JetBrains Mono",Consolas,monospace;color:var(--muted);margin-right:4px}
+.badge{font:500 .72rem "JetBrains Mono",Consolas,monospace;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted)}
+.badge.ok{color:#1f7a4d;border-color:#1f7a4d55}
+[data-theme=dark] .badge.ok{color:#5fd49b;border-color:#5fd49b55}
+.badge.rev{color:#9a6700;border-color:#9a670055}
+[data-theme=dark] .badge.rev{color:#e3b341;border-color:#e3b34155}
+.paper h3{font-size:1.25rem;margin:0 0 12px}
+.paper p{margin:0 0 18px;color:var(--muted)}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{font:500 .82rem "JetBrains Mono",Consolas,monospace;padding:8px 16px;border:1px solid var(--line);background:var(--bg);color:var(--fg);text-decoration:none;cursor:pointer;border-radius:6px;transition:all .15s}
+.btn:hover{border-color:var(--fg)}
+.btn[aria-expanded=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.bibbox{display:none;position:relative;margin-top:16px}
+.bibbox.open{display:block}
+pre.bib{margin:0;padding:16px;padding-top:40px;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow-x:auto;font-size:.78rem;line-height:1.6;white-space:pre-wrap;word-break:break-word}
+.copy{position:absolute;top:8px;right:8px;font:500 .74rem "JetBrains Mono",Consolas,monospace;padding:3px 10px;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:6px;cursor:pointer;transition:all .15s}
+.copy:hover{border-color:var(--fg)}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+figure{margin:0;border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--surface);transition:border-color .2s}
+figure:hover{border-color:var(--hover)}
+figure img{width:100%;height:auto;display:block;border-radius:6px;background:#fff;cursor:zoom-in}
+figcaption{font-size:.85rem;color:var(--muted);margin-top:10px;line-height:1.55}
+footer{margin-top:56px;padding:22px 0 44px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+#lb{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.85);padding:24px;cursor:zoom-out}
+#lb.open{display:flex}
+#lb img{max-width:100%;max-height:100%;background:#fff;border-radius:4px}
+#lbx{position:absolute;top:14px;right:18px;background:none;border:0;color:#fff;font-size:2rem;line-height:1;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(max-width:760px){
+ .metrics{grid-template-columns:repeat(2,1fr)}
+ .gallery{grid-template-columns:1fr}
+ h1{font-size:2rem}
+ .paper{padding:18px}
+ nav .wrap{gap:14px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
+<nav>
 <div class="wrap">
+<a class="brand" href="#top">Laudza Kusuma</a>
+<a class="nl" href="#publications">Publications</a>
+<a class="nl" href="#benchmarks">Benchmarks</a>
+<button id="theme" aria-label="Toggle light / dark mode" title="Toggle light / dark mode">
+<svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+<svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+</button>
+</div>
+</nav>
+
+<div class="wrap" id="top">
 <header>
 <h1>Laudza Kusuma</h1>
 <p class="sub">Independent Researcher | Post-Quantum Cryptography, Consensus Systems &amp; Quantum Communications</p>
-<ul class="links">
-<li><a href="https://github.com/laudzakusuma/aqmp-protocol">GitHub: aqmp-protocol</a></li>
-<li><a href="https://github.com/laudzakusuma/pqc_demo">GitHub: pqc_demo</a></li>
-<li><a class="mono" href="https://doi.org/10.5281/zenodo.18993494">Zenodo Concept DOI</a></li>
-<li><a class="mono" href="mailto:laudzaxie@gmail.com">laudzaxie@gmail.com</a></li>
+<ul class="pills">
+<li><a href="https://github.com/laudzakusuma/aqmp-protocol"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub: aqmp-protocol</a></li>
+<li><a href="https://github.com/laudzakusuma/pqc_demo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub: pqc_demo</a></li>
+<li><a class="mono" href="https://doi.org/10.5281/zenodo.18993494"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>Zenodo Concept DOI</a></li>
+<li><a class="mono" href="mailto:laudzaxie@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>laudzaxie@gmail.com</a></li>
 </ul>
 </header>
 
@@ -62,11 +116,11 @@ footer{margin-top:48px;padding:20px 0 40px;border-top:1px solid var(--line);font
 <div class="metric"><b>62 / 62</b><span>Passing Reproducible Pytest Suite</span></div>
 </div>
 
-<section>
+<section id="publications">
 <h2>Publications</h2>
 
 <article class="paper">
-<span class="tag">Paper #1</span>
+<div class="meta"><span class="tag">Paper #1</span><span class="badge rev">IACR ePrint: Under Review</span><span class="badge ok">Zenodo Published</span></div>
 <h3>Adaptive Quantum Migration Protocol (AQMP v2.0): Break-Even Lattice Aggregation, 300-Byte Plonky3 Recursion, and QROM-Verified Temporal Decoupling</h3>
 <p>N*<sub>EL</sub> = 81, N*<sub>CL</sub> = 111. Plonky3 BabyBear 300 B + 4-byte KeyRegistry = 11.30 KB at N = 250, outperforming ECDSA at N = 6. Security verified in EasyCrypt under the Zhandry QROM.</p>
 <div class="btns">
@@ -74,18 +128,18 @@ footer{margin-top:48px;padding:20px 0 40px;border-top:1px solid var(--line);font
 <a class="btn" href="https://github.com/laudzakusuma/aqmp-protocol">GitHub</a>
 <button class="btn" data-bib="bib1" aria-expanded="false">BibTeX</button>
 </div>
-<pre class="bib" id="bib1">@misc{kusuma2026aqmp,
+<div class="bibbox" id="bib1"><button class="copy" type="button">Copy</button><pre class="bib">@misc{kusuma2026aqmp,
   author    = {Kusuma, Laudza},
   title     = {Adaptive Quantum Migration Protocol (AQMP v2.0): Break-Even Lattice Aggregation, 300-Byte Plonky3 Recursion, and QROM-Verified Temporal Decoupling},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.24303569},
   url       = {https://doi.org/10.5281/zenodo.24303569}
-}</pre>
+}</pre></div>
 </article>
 
 <article class="paper">
-<span class="tag">Paper #2</span>
+<div class="meta"><span class="tag">Paper #2</span><span class="badge rev">IACR ePrint: Under Review</span><span class="badge ok">Zenodo Published</span></div>
 <h3>Stateless Post-Quantum Threshold Signatures and Knowledge-Asymmetry Frozen UTXO Rescue for Blockchain Custody and Legacy Supply Migration</h3>
 <p>Stateless PQ-MPC over F<sub>q</sub><sup>64</sup>, q = 8,380,417. Verification takes 3.90-4.68 ms. Knowledge-Asymmetry UTXO Rescue uses unhardened BIP-32 parent chain codes and requires 676 B.</p>
 <div class="btns">
@@ -93,18 +147,18 @@ footer{margin-top:48px;padding:20px 0 40px;border-top:1px solid var(--line);font
 <a class="btn" href="https://github.com/laudzakusuma/aqmp-protocol">GitHub</a>
 <button class="btn" data-bib="bib2" aria-expanded="false">BibTeX</button>
 </div>
-<pre class="bib" id="bib2">@misc{kusuma2026stateless,
+<div class="bibbox" id="bib2"><button class="copy" type="button">Copy</button><pre class="bib">@misc{kusuma2026stateless,
   author    = {Kusuma, Laudza},
   title     = {Stateless Post-Quantum Threshold Signatures and Knowledge-Asymmetry Frozen UTXO Rescue for Blockchain Custody and Legacy Supply Migration},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.24341314},
   url       = {https://doi.org/10.5281/zenodo.24341314}
-}</pre>
+}</pre></div>
 </article>
 
 <article class="paper">
-<span class="tag">Paper #3</span>
+<div class="meta"><span class="tag">Paper #3</span><span class="badge ok">Zenodo Published</span></div>
 <h3>Decoherence-Resilient Classical Authentication for Device-Independent Quantum Key Distribution and Memory-Assisted Quantum Repeaters via QROM-Verified Dual-Commit Sponges</h3>
 <p>384-bit Wide-Sponge Dual-Commit XOR, 144 B cycle, 13.40 us verification. At L = 200 km, M = 8 hops, with a 9.59 ms coherence boundary and CHSH S = 2.669, the scheme yields 16,484 bps versus 0 bps for ML-DSA-65 and SPHINCS+-128f.</p>
 <div class="btns">
@@ -112,18 +166,18 @@ footer{margin-top:48px;padding:20px 0 40px;border-top:1px solid var(--line);font
 <a class="btn" href="https://github.com/laudzakusuma/aqmp-protocol">GitHub</a>
 <button class="btn" data-bib="bib3" aria-expanded="false">BibTeX</button>
 </div>
-<pre class="bib" id="bib3">@misc{kusuma2026diqkd,
+<div class="bibbox" id="bib3"><button class="copy" type="button">Copy</button><pre class="bib">@misc{kusuma2026diqkd,
   author    = {Kusuma, Laudza},
   title     = {Decoherence-Resilient Classical Authentication for Device-Independent Quantum Key Distribution and Memory-Assisted Quantum Repeaters via QROM-Verified Dual-Commit Sponges},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.24343601},
   url       = {https://doi.org/10.5281/zenodo.24343601}
-}</pre>
+}</pre></div>
 </article>
 </section>
 
-<section>
+<section id="benchmarks">
 <h2>Empirical Figures (300 DPI)</h2>
 <div class="gallery">
 <figure><img src="assets/fig1_breakeven_curve.png" alt="Break-even curve" loading="lazy"><figcaption><b>Fig. 1.</b> Break-even curve of lattice signature aggregation versus ECDSA; N*<sub>EL</sub> = 81, N*<sub>CL</sub> = 111. Plonky3 recursion outperforms ECDSA at N = 6.</figcaption></figure>
@@ -135,14 +189,50 @@ footer{margin-top:48px;padding:20px 0 40px;border-top:1px solid var(--line);font
 
 <footer>Laudza Kusuma (Independent Researcher) | CC BY 4.0 / MIT</footer>
 </div>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Figure viewer"><button id="lbx" aria-label="Close">&times;</button><img alt=""></div>
+
 <script>
-document.querySelectorAll('[data-bib]').forEach(function(b){
-  b.addEventListener('click',function(){
-    var p=document.getElementById(b.dataset.bib);
-    var o=p.classList.toggle('open');
-    b.setAttribute('aria-expanded',o);
+(function(){
+  var root=document.documentElement;
+  document.getElementById('theme').addEventListener('click',function(){
+    var t=root.dataset.theme==='dark'?'light':'dark';
+    root.dataset.theme=t;localStorage.setItem('theme',t);
   });
-});
+
+  document.querySelectorAll('[data-bib]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var o=document.getElementById(b.dataset.bib).classList.toggle('open');
+      b.setAttribute('aria-expanded',o);
+    });
+  });
+
+  document.querySelectorAll('.copy').forEach(function(c){
+    c.addEventListener('click',function(){
+      var txt=c.parentNode.querySelector('pre').textContent;
+      function done(){c.textContent='Copied!';clearTimeout(c._t);c._t=setTimeout(function(){c.textContent='Copy'},2000)}
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(txt).then(done,fallback);
+      }else fallback();
+      function fallback(){
+        var ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';
+        document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}
+        document.body.removeChild(ta);done();
+      }
+    });
+  });
+
+  var lb=document.getElementById('lb'),lbi=lb.querySelector('img');
+  function close(){lb.classList.remove('open');lbi.removeAttribute('src');document.body.style.overflow=''}
+  document.querySelectorAll('figure img').forEach(function(im){
+    im.addEventListener('click',function(){
+      lbi.src=im.src;lbi.alt=im.alt;lb.classList.add('open');document.body.style.overflow='hidden';
+    });
+  });
+  lb.addEventListener('click',function(e){if(e.target!==lbi)close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+})();
 </script>
 </body>
 </html>
